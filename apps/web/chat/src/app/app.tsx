@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import ChatPage from './pages/ChatPage';
 import ActivitiesPage from './pages/ActivitiesPage';
-import ItinerariesPage from './pages/ItinerariesPage';
+import ItineraryPage from './pages/ItineraryPage';
+import AuthCallbackPage from './pages/AuthCallbackPage';
 
 // #3358ae - dark (primary)
 // #99abd7 - light (secondary)
@@ -12,7 +13,8 @@ function App() {
     <Routes>
       <Route index element={<ChatPage />} />
       <Route path="activities" element={<ActivitiesPage />} />
-      <Route path="itineraries" element={<ItinerariesPage />} />
+      <Route path="itinerary" element={<ItineraryPage />} />
+      <Route path="auth/callback" element={<AuthCallbackPage />} />
     </Routes>
   );
 }

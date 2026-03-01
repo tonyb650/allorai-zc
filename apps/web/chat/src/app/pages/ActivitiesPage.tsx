@@ -13,7 +13,7 @@ const ActivitiesPage = () => {
         activityOptions={activityOptions}
         travelTips={travelTips}
         togglePin={togglePin}
-        onReviewAndSave={() => navigate('/chat/itineraries')}
+        onReviewAndSave={() => navigate('/chat/itinerary')}
         onModifyDetails={() => navigate('/landing')}
       />
     </div>

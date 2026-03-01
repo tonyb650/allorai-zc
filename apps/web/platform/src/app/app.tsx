@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import '../styles.css';
 import React, { Suspense } from 'react';
 import LoginPage from './features/login/LoginPage';
+import AuthCallback from './features/login/AuthCallback';
 
 const ExplorePage = React.lazy(() => import('explore/Module'));
 const LandingPage = React.lazy(() => import('landing/Module'));
@@ -26,6 +27,7 @@ function App() {
           <Route path="itineraries" element={<ItinerariesPage />} />
           <Route path="explore" element={<ExplorePage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="auth/callback" element={<AuthCallback />} />
         </Route>
       </Routes>
     </Suspense>
