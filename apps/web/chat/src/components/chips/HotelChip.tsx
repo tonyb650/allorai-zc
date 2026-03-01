@@ -17,7 +17,7 @@ const HotelChip = ({ hotel, departureDate, returnDate }: HotelChipProps) => {
   const totalCost = hotel?.price && nights && nights !== null ? hotel.price * nights : undefined;
 
   return (
-    <div className="bg-[rgba(251,251,254,0.75)] border border-black flex gap-[30px] items-stretch p-6 rounded-2xl">
+    <div className="bg-[rgba(251,251,254,0.75)] border border-black flex gap-[30px] items-stretch p-6 rounded-2xl justify-between">
       {/* Hotel Image */}
       {hotel.imageUrl && (
         <div className="self-stretch w-[80px] shrink-0 overflow-hidden rounded-lg">

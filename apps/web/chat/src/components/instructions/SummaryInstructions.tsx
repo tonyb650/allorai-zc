@@ -33,11 +33,11 @@ const SummaryInstructions = ({
   const totalCost = Number(departureCost) + Number(returnCost) + hotelCost;
 
   return (
-    <div className="bg-[#99abd7] flex flex-col gap-4 rounded-[20px] w-full">
+    <div className="bg-[#3358ae] flex flex-col gap-5 rounded-[20px] w-full">
       {/* Flights - Departing */}
       {departureFlight && (
-        <div className="flex flex-col gap-3">
-          <h3 className="font-bold text-xl text-black tracking-[-1px] leading-[28.8px]">
+        <div className="flex flex-col gap-1">
+          <h3 className="font-semibold text-xl leading-[28.8px]">
             Departing ({departureDate})
           </h3>
           <FlightChip flight={departureFlight} direction='outbound' />
@@ -46,8 +46,8 @@ const SummaryInstructions = ({
 
       {/* Flights - Return */}
       {returnFlight && (
-        <div className="flex flex-col gap-3">
-          <h3 className="font-bold text-xl text-black tracking-[-1px] leading-[28.8px]">
+        <div className="flex flex-col gap-1">
+          <h3 className="font-semibold text-xl leading-[28.8px]">
             Return ({returnDate})
           </h3>
           <FlightChip flight={returnFlight} direction='return' />
@@ -56,20 +56,20 @@ const SummaryInstructions = ({
 
       {/* Lodging */}
       {hotel && (
-        <div className="flex flex-col gap-3">
-          <h3 className="font-bold text-xl text-black tracking-[-1px] leading-[28.8px]">Lodging</h3>
+        <div className="flex flex-col gap-1">
+          <h3 className="font-semibold text-xl  leading-[28.8px]">Lodging</h3>
           <HotelChip hotel={hotel} departureDate={departureDate} returnDate={returnDate} />
         </div>
       )}
 
       {/* Total Cost Summary */}
       {(departureFlight || returnFlight || hotel) && (
-        <div className="flex flex-col gap-3 pt-2 border-t-2 border-black/20">
+        <div className="flex flex-col gap-1 pt-2 border-t-2 border-black/20">
           <div className="flex justify-between items-center">
-            <h3 className="font-bold text-xl text-black tracking-[-1px] leading-[28.8px]">
+            <h3 className="font-semibold text-xl  leading-[28.8px]">
               Total Cost
             </h3>
-            <span className="font-bold text-2xl text-black">${totalCost.toLocaleString()}</span>
+            <span className="font-semibold text-2xl ">${totalCost.toLocaleString()}</span>
           </div>
         </div>
       )}

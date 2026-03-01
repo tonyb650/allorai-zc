@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Plane, User } from 'lucide-react';
 import { ReactNode } from 'react';
-import { ChatStep, ChatStepSequence } from '../app/chatSteps/helpers/createChatSteps';
+import { ChatStep } from '../app/chatSteps/helpers/createChatSteps';
 
 function ChatMessageList({
   steps,
@@ -12,7 +12,7 @@ function ChatMessageList({
 }) {
   return (
     <div className="flex flex-col-reverse h-full my-4">
-      <div className="space-y-0.5">
+      <div className="space-y-3">
         {steps
           .filter((_, i) => i <= currentStepIndex)
           .map((chatStep, index) => (
@@ -38,8 +38,7 @@ function InstructionsCard({
       <Plane size={30} className="mx-1 bg-[#3358ae] text-white rounded-full p-1 shrink-0" />
       <div
         className={clsx(
-          'p-6 text-left whitespace-normal text-white rounded-t-xl rounded-r-xl',
-          ChatStepSequence[step] === 'Summary' ? 'bg-[#99abd7]' : 'bg-[#3358ae]',
+          'p-6 text-left whitespace-normal text-white rounded-t-xl rounded-r-xl bg-[#3358ae]',
         )}
       >
         {instructions}
@@ -53,7 +52,7 @@ function FormCard({ current, form }: { current?: boolean; form: ReactNode }) {
     <div className={clsx('flex items-end gap-2 justify-end')}>
       <div
         className={clsx(
-          'ml-14 mt-8 text-black self-center rounded-t-xl rounded-l-xl justify-end break-words w-auto max-w-1/2',
+          'ml-14 text-black self-center rounded-t-xl rounded-l-xl justify-end break-words w-auto max-w-1/2',
           current ? 'bg-[#97dbd9]' : 'bg-[#99abd7]',
         )}
       >

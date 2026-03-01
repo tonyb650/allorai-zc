@@ -123,7 +123,7 @@ const ActivitiesForm = ({
                   )}
                 >
                   <Icon size={18} className="shrink-0" />
-                  <span className="text-sm font-semibold tracking-[0.07px] text-black">
+                  <span className="text-sm font-semibold tracking-[0.07px] text-black text-nowrap">
                     {filter}
                   </span>
                   <span
