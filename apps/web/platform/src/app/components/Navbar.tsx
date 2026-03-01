@@ -46,6 +46,7 @@ export default function Navbar() {
               isOpen={isDialogOpen}
               onClose={() => setIsDialogOpen(false)}
               title="Start Over"
+              className={clsx('max-w-sm')}
             >
               <StartOver
                 onClose={() => setIsDialogOpen(false)}

@@ -1,5 +1,5 @@
-import { Button, Dialogue } from '@allorai/shared-ui';
-import { ModifyDetails } from '../../components/modals/ModifyDetails';
+import { Button, Dialogue, StartOver } from '@allorai/shared-ui';
+import { deleteChatSession } from '../api/chat';
 import clsx from 'clsx';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
@@ -124,16 +124,29 @@ const ChatPage = () => {
             <div className="flex gap-2">
               {!isFirstStep && !isLastStep && (
                 <Button onClick={() => setIsDialogOpen(true)} variant="secondary">
-                  Modify Details
+                  Start Over
                 </Button>
               )}
               <Dialogue
                 isOpen={isDialogOpen}
                 onClose={() => setIsDialogOpen(false)}
-                title="How would you like to modify your trip details?"
+                title="Would you like to start over?"
                 className="max-w-md"
               >
-                <ModifyDetails />
+                <StartOver
+                  onClose={() => setIsDialogOpen(false)}
+                  onReset={async () => {
+                    try {
+                      await deleteChatSession();
+                    } catch {
+                      // No active session to clear — continue with reset
+                      console.error('No active session to clear - continue with reset');
+                    } finally {
+                      setIsDialogOpen(false);
+                      navigate('/landing');
+                    }
+                  }}
+                />
               </Dialogue>
               <Button onClick={onSubmit}>
                 {isChatLoading ? (
