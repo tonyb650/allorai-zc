@@ -79,7 +79,7 @@ const ItineraryForm = ({
           </span>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="space-y-5 md:w-3/4">
           {departureFlight ? (
             <FlightChip flight={departureFlight} direction="outbound" />
           ) : (
@@ -108,13 +108,15 @@ const ItineraryForm = ({
           </span>
         </div>
 
-        {hotel ? (
-          <HotelChip hotel={hotel} departureDate={departureDate} returnDate={returnDate} />
-        ) : (
-          <div className="flex items-center justify-center rounded-[20px] border border-black bg-[rgba(251,251,254,0.75)] p-6 text-sm text-black/40">
-            No hotel selected
-          </div>
-        )}
+        <div className="space-y-5 md:w-3/4">
+          {hotel ? (
+            <HotelChip hotel={hotel} departureDate={departureDate} returnDate={returnDate} />
+          ) : (
+            <div className="flex items-center justify-center rounded-[20px] border border-black bg-[rgba(251,251,254,0.75)] p-6 text-sm text-black/40">
+              No hotel selected
+            </div>
+          )}
+        </div>
       </section>
 
       {/* Experiences Section */}
@@ -129,7 +131,7 @@ const ItineraryForm = ({
         </div>
 
         {/* Activities sub-section */}
-        <div className="flex flex-col gap-2">
+        <div className="space-y-5 md:w-3/4">
           <h3 className="font-['Montserrat',sans-serif] text-[24px] font-semibold leading-[28.8px] tracking-[-1px] text-black">
             Activities
           </h3>
@@ -160,21 +162,11 @@ const ItineraryForm = ({
       </section>
 
       {/* Action Buttons */}
-      <div className="flex gap-4">
-        <Button
-          variant="primary"
-          size="large"
-          onClick={onSaveTrip}
-          className="h-10 w-full"
-        >
+      <div className="flex justify-end gap-4">
+        <Button variant="primary" size="large" onClick={onSaveTrip} className="h-10 w-48">
           Save Trip
         </Button>
-        <Button
-          variant="outline"
-          size="large"
-          onClick={onNewTrip}
-          className="h-10 w-full"
-        >
+        <Button variant="outline" size="large" onClick={onNewTrip} className="h-10 w-48 ">
           New Trip
         </Button>
       </div>
