@@ -36,6 +36,7 @@ const ChatPage = () => {
 
   const forceRealUserInputOnLanding = true;
 
+  // empty dependency array is correct in this case. We never want the effect to run again no matter what changes
   useEffect(() => {
     const prefs = startingPrefs ?? (forceRealUserInputOnLanding ? null : fallbackStartingPrefs);
     if (prefs) {
