@@ -12,7 +12,7 @@ const ItinerariesPage = () => {
         {...tripData}
         activityOptions={activityOptions}
         onSaveTrip={() => {
-          // TODO: wire to save API
+          window.location.href = `${window.location.origin.replace(':4202', ':4200')}/login`;
         }}
         onNewTrip={() => navigate('/landing')}
       />
