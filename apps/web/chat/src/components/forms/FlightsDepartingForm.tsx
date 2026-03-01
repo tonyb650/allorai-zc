@@ -60,7 +60,7 @@ const FlightsDepartingForm = ({
               />
               <div
                 className={clsx(
-                  'peer-checked:ring-2 peer-checked:ring-[#3358ae] rounded-[20px] transition-all duration-200 ',
+                  'peer-checked:ring-2 peer-checked:ring-primary rounded-[20px] transition-all duration-200 ',
                   isActive && 'group-hover:scale-[1.02] group-hover:shadow-lg',
                   !isActive && flightDepartingId !== flight.id && 'hidden',
                 )}

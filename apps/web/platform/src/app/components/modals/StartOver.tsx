@@ -22,7 +22,7 @@ export const StartOver = ({ onClose, onReset }: StartOverProps) => {
         onClick={onClose}
         className="w-full flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-left"
       >
-        <ArrowLeft size={24} className="text-[#3358ae]" />
+        <ArrowLeft size={24} className="text-primary" />
         <div>
           <div className="font-semibold text-gray-900">Go Back</div>
           <div className="text-sm text-gray-500">Continue working on your current trip</div>

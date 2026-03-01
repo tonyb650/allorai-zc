@@ -35,10 +35,10 @@ function InstructionsCard({
 }) {
   return instructions ? (
     <div className="flex py-2 mr-14 text-left items-end gap-2">
-      <Plane size={30} className="mx-1 bg-[#3358ae] text-white rounded-full p-1 shrink-0" />
+      <Plane size={30} className="mx-1 bg-primary text-white rounded-full p-1 shrink-0" />
       <div
         className={clsx(
-          'p-6 text-left whitespace-normal text-white rounded-t-xl rounded-r-xl bg-[#3358ae]',
+          'p-6 text-left whitespace-normal text-white rounded-t-xl rounded-r-xl bg-primary',
         )}
       >
         {instructions}
@@ -53,14 +53,14 @@ function FormCard({ current, form }: { current?: boolean; form: ReactNode }) {
       <div
         className={clsx(
           'ml-14 text-black self-center rounded-t-xl rounded-l-xl justify-end break-words w-auto max-w-1/2',
-          current ? 'bg-[#97dbd9]' : 'bg-[#99abd7]',
+          current ? 'bg-accent' : 'bg-secondary',
         )}
       >
         <div className="p-6 text-left whitespace-normal">{form}</div>
       </div>
       {current ? (
         <div className="w-12">
-          <User size={30} className={'text-black bg-[#97dbd9] rounded-full p-1 mx-1 shrink-0'} />
+          <User size={30} className={'text-black bg-accent rounded-full p-1 mx-1 shrink-0'} />
         </div>
       ) : (
         <div className="w-12"></div>

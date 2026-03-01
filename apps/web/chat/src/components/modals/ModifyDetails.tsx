@@ -14,7 +14,7 @@ export const ModifyDetails = ({ handleGoBack, handleOpenChat }: ModifyDetailProp
           onClick={handleGoBack}
           className="w-full flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-left"
         >
-          <ArrowLeft size={24} className="text-[#3358ae]" />
+          <ArrowLeft size={24} className="text-primary" />
           <div>
             <div className="font-semibold text-gray-900">Return to Previous Step</div>
             <div className="text-sm text-gray-500">Go back and change your previous selection</div>
@@ -24,7 +24,7 @@ export const ModifyDetails = ({ handleGoBack, handleOpenChat }: ModifyDetailProp
           onClick={handleOpenChat}
           className="w-full flex items-center gap-3 p-4 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-left"
         >
-          <MessageCircle size={24} className="text-[#3358ae]" />
+          <MessageCircle size={24} className="text-primary" />
           <div>
             <div className="font-semibold text-gray-900">(Future Feature)</div>
             <div className="text-sm text-gray-500">

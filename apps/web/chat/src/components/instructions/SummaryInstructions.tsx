@@ -33,7 +33,7 @@ const SummaryInstructions = ({
   const totalCost = Number(departureCost) + Number(returnCost) + hotelCost;
 
   return (
-    <div className="bg-[#3358ae] flex flex-col gap-5 rounded-[20px] w-full">
+    <div className="bg-primary flex flex-col gap-5 rounded-[20px] w-full">
       {/* Flights - Departing */}
       {departureFlight && (
         <div className="flex flex-col gap-1">

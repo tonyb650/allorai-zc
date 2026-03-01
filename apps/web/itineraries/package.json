@@ -30,5 +30,8 @@
       "default": "./src/remote-entry.ts"
     }
   },
-  "types": "./src/remote-entry.ts"
+  "types": "./src/remote-entry.ts",
+  "devDependencies": {
+    "@allorai/tailwind-config": "workspace:*"
+  }
 }

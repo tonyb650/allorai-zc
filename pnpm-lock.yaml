@@ -244,16 +244,35 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
 
-  apps/web/chat: {}
+  apps/web/chat:
+    devDependencies:
+      '@allorai/tailwind-config':
+        specifier: workspace:*
+        version: link:../../../libs/shared/tailwind-config
 
-  apps/web/explore: {}
+  apps/web/explore:
+    devDependencies:
+      '@allorai/tailwind-config':
+        specifier: workspace:*
+        version: link:../../../libs/shared/tailwind-config
 
-  apps/web/itineraries: {}
+  apps/web/itineraries:
+    devDependencies:
+      '@allorai/tailwind-config':
+        specifier: workspace:*
+        version: link:../../../libs/shared/tailwind-config
 
-  apps/web/landing: {}
+  apps/web/landing:
+    devDependencies:
+      '@allorai/tailwind-config':
+        specifier: workspace:*
+        version: link:../../../libs/shared/tailwind-config
 
   apps/web/platform:
     devDependencies:
+      '@allorai/tailwind-config':
+        specifier: workspace:*
+        version: link:../../../libs/shared/tailwind-config
       chat:
         specifier: workspace:*
         version: link:../chat
@@ -266,6 +285,8 @@ importers:
       landing:
         specifier: workspace:*
         version: link:../landing
+
+  libs/shared/tailwind-config: {}
 
   libs/shared/types: {}
 
