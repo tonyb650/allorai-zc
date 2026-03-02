@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from './lib/supabase';
 import { fetchUserTrips, TripSummary } from './lib/tripService';
 
-function ItinerariesPage() {
+function MyTripsPage() {
   const [trips, setTrips] = useState<TripSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -76,4 +76,4 @@ function ItinerariesPage() {
   );
 }
 
-export default ItinerariesPage;
+export default MyTripsPage;
