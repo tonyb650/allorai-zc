@@ -7,6 +7,17 @@ import { EateryResponseDataSchema } from '../schemas/eateryResponseSchema';
 import { createChatRequest } from '../helpers/chatRequest';
 import { sendTipsRequestMessage } from '../../api/tips';
 import { TravelTipResponseDataSchema } from '../schemas/travelTipResponseSchema';
+import { Activity } from '@allorai/shared-types';
+
+const MAX_PER_CATEGORY = 4;
+
+const appendDeduped = (prev: Activity[], incoming: Activity[]): Activity[] => {
+  // const names = new Set(prev.map((a) => a.name.toLowerCase().trim()));
+  // const unique = incoming.filter((a) => !names.has(a.name.toLowerCase().trim()));
+  const ids = new Set(prev.map((a) => a.id));
+  const unique = incoming.filter((a) => !ids.has(a.id));
+  return [...prev, ...unique.slice(0, MAX_PER_CATEGORY)];
+};
 
 export const activityBudgetStepHandler: StepHandler = async ({
   tripData,
@@ -51,7 +62,7 @@ export const activityBudgetStepHandler: StepHandler = async ({
           console.error('Invalid activity response data:', parsed.error.issues);
         } else if (parsed.data.options) {
           const options = parsed.data.options;
-          setActivityOptions((prev) => [...prev, ...options]);
+          setActivityOptions((prev) => appendDeduped(prev, options));
         }
         return response;
       }),
@@ -62,7 +73,7 @@ export const activityBudgetStepHandler: StepHandler = async ({
           console.log(parsed);
         } else if (parsed.data.options) {
           const options = parsed.data.options;
-          setActivityOptions((prev) => [...prev, ...options]);
+          setActivityOptions((prev) => appendDeduped(prev, options));
         }
       }),
       sendChatMessage(eateriesRequest).then((response) => {
@@ -71,7 +82,7 @@ export const activityBudgetStepHandler: StepHandler = async ({
           console.error('Invalid eatery response data:', parsed.error.issues);
         } else if (parsed.data.options) {
           const options = parsed.data.options;
-          setActivityOptions((prev) => [...prev, ...options]);
+          setActivityOptions((prev) => appendDeduped(prev, options));
         }
       }),
       sendChatMessage(selfieSpotRequest).then((response) => {
@@ -80,7 +91,7 @@ export const activityBudgetStepHandler: StepHandler = async ({
           console.error('Invalid selfie spot response data:', parsed.error.issues);
         } else if (parsed.data.options) {
           const options = parsed.data.options;
-          setActivityOptions((prev) => [...prev, ...options]);
+          setActivityOptions((prev) => appendDeduped(prev, options));
         }
       }),
       sendTipsRequestMessage(travelTipsRequest).then((response) => {
