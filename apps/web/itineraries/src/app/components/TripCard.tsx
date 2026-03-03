@@ -7,6 +7,26 @@ type TripCardProps = {
   trip: TripSummary;
 };
 
+// This is only needed for demo once we reset the database, we can remove it
+const getTripTitle = (trip: TripSummary): string => {
+  const providedName = trip.name?.trim();
+  if (providedName) return providedName;
+
+  const cityCandidate = trip.city?.split(',')[0]?.trim();
+  const destinationCandidate = trip.destination?.split(',')[0]?.trim();
+  const location = cityCandidate || destinationCandidate || 'Unknown destination';
+
+  if (trip.departure_date) {
+    const parsedDate = new Date(`${trip.departure_date}T00:00:00`);
+    if (!isNaN(parsedDate.getTime())) {
+      const month = parsedDate.toLocaleDateString('en-US', { month: 'long' });
+      return `${month} trip to ${location}`;
+    }
+  }
+
+  return `Trip to ${location}`;
+};
+
 function TripDetails({ trip }: { trip: TripSummary }) {
   const originIata = trip.departure_flight?.legs?.[0]?.originAirport?.iata;
   return (
@@ -52,6 +72,7 @@ function TripDetails({ trip }: { trip: TripSummary }) {
 
 export function TripCard({ trip }: TripCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const tripTitle = getTripTitle(trip);
 
   return (
     <>
@@ -69,9 +90,7 @@ export function TripCard({ trip }: TripCardProps) {
           </div>
         )}
         <div className="p-4">
-          <p className="text-lg font-semibold">
-            {trip.city ?? trip.destination ?? 'Unknown destination'}
-          </p>
+          <p className="text-lg font-semibold">{tripTitle}</p>
           {(trip.departure_date || trip.return_date) && (
             <p className="text-sm text-gray-600">
               {trip.departure_date} – {trip.return_date}
@@ -110,7 +129,7 @@ export function TripCard({ trip }: TripCardProps) {
       <Dialogue
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        title={trip.city ?? trip.destination ?? 'Trip Details'}
+        title={tripTitle}
         className="max-w-lg"
       >
         <TripDetails trip={trip} />

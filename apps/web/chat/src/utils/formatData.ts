@@ -16,6 +16,46 @@ export const formatDate = (dateString: string | undefined | null): string | unde
   });
 };
 
+const getDepartureMonth = (dateString: string | undefined | null): string | undefined => {
+  if (!dateString) return undefined;
+  const date = new Date(`${dateString}T00:00:00`);
+  if (isNaN(date.getTime())) {
+    const fallbackDate = new Date(dateString);
+    if (isNaN(fallbackDate.getTime())) return undefined;
+    return fallbackDate.toLocaleDateString('en-US', { month: 'long' });
+  }
+
+  return date.toLocaleDateString('en-US', { month: 'long' });
+};
+
+const getPreferredLocation = (
+  city: string | undefined | null,
+  destination: string | undefined | null,
+): string => {
+  const cityCandidate = city?.split(',')[0]?.trim();
+  if (cityCandidate) return cityCandidate;
+
+  const destinationCandidate = destination?.split(',')[0]?.trim();
+  if (destinationCandidate) return destinationCandidate;
+
+  return 'Unknown destination';
+};
+
+export const deriveTripName = (
+  providedName: string | undefined | null,
+  departureDate: string | undefined | null,
+  city: string | undefined | null,
+  destination: string | undefined | null,
+): string => {
+  const normalizedName = providedName?.trim();
+  if (normalizedName) return normalizedName;
+
+  const location = getPreferredLocation(city, destination);
+  const month = getDepartureMonth(departureDate);
+
+  return month ? `${month} trip to ${location}` : `Trip to ${location}`;
+};
+
 /**
  * Format an ISO time string into a human-readable format.
  * If the time string is invalid, returns the original string.

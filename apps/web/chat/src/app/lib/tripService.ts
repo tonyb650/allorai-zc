@@ -1,15 +1,24 @@
 import { TripData, Activity } from '@allorai/shared-types';
 import { supabase } from './supabase';
+import { deriveTripName } from '../../utils/formatData';
 
 export async function saveTrip(
   userId: string,
   tripData: TripData,
   pinnedActivities: Activity[]
 ): Promise<string> {
+  const name = deriveTripName(
+    tripData.name,
+    tripData.departureDate,
+    tripData.city,
+    tripData.destination,
+  );
+
   const { data: trip, error: tripError } = await supabase
     .from('trips')
     .insert({
       user_id: userId,
+      name,
       origin: tripData.origin ?? null,
       destination: tripData.destination ?? null,
       city: tripData.city ?? null,

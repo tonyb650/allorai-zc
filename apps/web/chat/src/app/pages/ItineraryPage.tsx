@@ -89,6 +89,7 @@ const ItineraryPage = () => {
       <ItineraryForm
         {...tripData}
         activityOptions={activityOptions}
+        onNameChange={(name) => updateTripData({ name })}
         onSaveTrip={handleSaveTrip}
         onNewTrip={() => navigate('/landing')}
       />

@@ -1,4 +1,4 @@
-import { type ChatResponse } from '@allorai/shared-types';
+import { Hotel, type ChatResponse } from '@allorai/shared-types';
 import { sendChatMessage } from '../../api/chat';
 import { HotelResponseDataSchema } from '../schemas/hotelResponseSchema';
 import { StepHandler } from '../types';
@@ -41,7 +41,16 @@ export const flightReturningStepHandler: StepHandler = async ({
     }
 
     setChatMessages([...request.messages, response.messages[response.messages.length - 1]]); // adding on ai response message
-    setHotelOptions(parsedResponseData.data.options);
+
+    // Inject fake pricing for hotels
+    const hotelOptions: Hotel[] = parsedResponseData.data.options.map((option) => {
+      return {
+        ...option,
+        price: option.price || Math.floor(Math.random() * (590 - 290 + 1)) + 290,
+      };
+    });
+
+    setHotelOptions(hotelOptions);
     return { success: true, shouldAdvance: true };
   } catch (error) {
     return {

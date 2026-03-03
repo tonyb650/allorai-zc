@@ -5,6 +5,7 @@ export type BudgetPref = 'budget' | 'balanced' | 'premium' | 'none';
 
 // StartingPrefs comes from the form on the landing page (query string)
 export interface StartingPrefs {
+  name?: string;
   origin?: string;
   destination?: string;
   city?: string;
@@ -36,6 +37,7 @@ export interface TripData extends TripPrefs {
 
 export function createEmptyTrip(): TripData {
   return {
+    name: undefined,
     origin: undefined,
     destination: undefined,
     city: undefined,

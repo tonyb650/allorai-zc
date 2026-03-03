@@ -7,6 +7,7 @@ import { ViewDetails } from '../modals/ViewDetails';
 import { calculateNights } from '../../utils/formatData';
 
 export type ItineraryFormData = {
+  name?: string;
   departureDate?: string;
   returnDate?: string;
   departureFlight?: Flight;
@@ -16,6 +17,7 @@ export type ItineraryFormData = {
 
 type ItineraryFormProps = ItineraryFormData & {
   activityOptions: Activity[];
+  onNameChange: (name: string) => void;
   onSaveTrip: () => void;
   onNewTrip: () => void;
 };
@@ -42,12 +44,14 @@ const calcActivitiesTotal = (activities: Activity[]): number => {
 };
 
 const ItineraryForm = ({
+  name,
   departureDate,
   returnDate,
   departureFlight,
   returnFlight,
   hotel,
   activityOptions,
+  onNameChange,
   onSaveTrip,
   onNewTrip,
 }: ItineraryFormProps) => {
@@ -63,6 +67,19 @@ const ItineraryForm = ({
 
   return (
     <div className="flex w-full flex-col gap-7 pt-6">
+      <section className="flex justify-between">
+        <input
+          type="text"
+          value={name ?? ''}
+          onChange={(event) => onNameChange(event.target.value)}
+          placeholder="Enter Trip Name"
+          className="md:w-3/4 rounded-[12px] border border-black bg-[rgba(251,251,254,0.75)] px-4 py-3 text-[18px] leading-[24px] text-black placeholder:text-black/50 focus:outline-none"
+        />
+                <Button variant="primary" size="large" onClick={onSaveTrip} className="h-10 w-48">
+          Save Trip
+        </Button>
+      </section>
+
       {/* Page Title */}
       <h1 className="font-['Montserrat',sans-serif] text-[48px] font-semibold leading-[48px] tracking-[-1.5px] text-black">
         Review Trip

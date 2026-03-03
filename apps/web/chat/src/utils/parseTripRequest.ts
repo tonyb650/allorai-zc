@@ -45,10 +45,8 @@ export default function parseStartingPrefs(searchParams: URLSearchParams): Start
     preferences: searchParams.get('preferences')?.trim() || undefined,
   };
 
-  console.log(rawData)
   const parsed = startingPrefsSchema.safeParse(rawData);
 
-  console.log(parsed)
   if (!parsed.success) {
     console.error('Invalid starting prefs search params', parsed.error.flatten());
     return null;
