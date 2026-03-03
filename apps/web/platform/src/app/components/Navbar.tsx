@@ -8,11 +8,7 @@ import { deleteChatSession } from '../api/chat';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
 
-const navigation = [
-  { name: 'Chat', href: '/chat' },
-  { name: 'Itineraries', href: '/itineraries' },
-  { name: 'Explore', href: '/explore' },
-];
+const navigation = [{ name: 'My Trips', href: '/itineraries' }];
 
 export default function Navbar() {
   const location = useLocation();
@@ -39,8 +35,8 @@ export default function Navbar() {
           </Link>
 
           <div className="flex space-x-4">
-            <Button variant="secondary" onClick={() => setIsDialogOpen(true)}>
-              Start Over
+            <Button variant="outline" onClick={() => setIsDialogOpen(true)}>
+              New Trip
             </Button>
             <Dialogue
               isOpen={isDialogOpen}
@@ -64,6 +60,19 @@ export default function Navbar() {
             </Dialogue>
             {navigation.map((item) => {
               const isActive = location.pathname === item.href;
+              const isDisabled = item.href === '/itineraries' && !user;
+
+              if (isDisabled) {
+                return (
+                  <span
+                    key={item.name}
+                    className="flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+                    title="Log in to view your trips"
+                  >
+                    <span>{item.name}</span>
+                  </span>
+                );
+              }
 
               return (
                 <Link

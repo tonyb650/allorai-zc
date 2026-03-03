@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useRef, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import { BudgetOverview, ActivityCard, Button } from '@allorai/shared-ui';
-import { Lightbulb, Trees, UtensilsCrossed, Ticket, Camera } from 'lucide-react';
+import { Lightbulb, Trees, UtensilsCrossed, Ticket, Camera, Sparkles } from 'lucide-react';
 import { Activity, Flight, Hotel, TravelTips } from '@allorai/shared-types';
 import { calculateNights } from '../../utils/formatData';
 import { Dialogue } from '@allorai/shared-ui';
@@ -52,10 +52,28 @@ const ActivitiesForm = ({
   const CARDS_PER_PAGE = 4;
   const isPinLocked = false;
 
+  const COST_RANGES: Record<ActivityFilterType, [number, number]> = {
+    Nature: [0, 10],
+    Food: [15, 60],
+    Activities: [20, 85],
+    'Selfie Spots': [0, 20],
+  };
+
+  const randomCostsRef = useRef<Map<string, string>>(new Map());
+  const getEstimatedCost = (activity: Activity): string => {
+    if (activity.estimatedCost) return activity.estimatedCost;
+    if (!randomCostsRef.current.has(activity.id)) {
+      const [min, max] = COST_RANGES[activity.category];
+      const cost = Math.floor(Math.random() * (max - min + 1)) + min;
+      randomCostsRef.current.set(activity.id, String(cost));
+    }
+    return randomCostsRef.current.get(activity.id)!;
+  };
+
   const budgetItems = useMemo(() => {
     const attractionsTotal = activityOptions
       .filter((a) => a.pinned)
-      .reduce((sum, a) => sum + (Number(a.estimatedCost) || 0), 0);
+      .reduce((sum, a) => sum + (Number(getEstimatedCost(a)) || 0), 0);
     return [
       {
         label: 'Flights',
@@ -65,7 +83,7 @@ const ActivitiesForm = ({
         label: 'Hotels',
         amount: (hotel?.price ?? 0) * (calculateNights(departureDate, returnDate) ?? 1),
       },
-      { label: 'Attractions', amount: attractionsTotal },
+      { label: 'Experiences', amount: attractionsTotal },
     ];
   }, [activityOptions, departureDate, returnDate, departureFlight, returnFlight, hotel]);
 
@@ -142,19 +160,22 @@ const ActivitiesForm = ({
 
         {/* AI Results - Activity Cards */}
         <div className="flex flex-col items-end gap-4">
-          {filteredActivities.slice(0, visibleCount).map((activity) => (
+          {filteredActivities.slice(0, visibleCount).map((activity, index) => (
             <ActivityCard
               key={activity.id}
               name={activity.name}
               description={activity.description}
               location={activity.location}
-              estimatedCost={activity.estimatedCost}
+              estimatedCost={getEstimatedCost(activity)}
               distance={activity.distance}
               imageUrl={activity.imageUrl}
               pinned={activity.pinned}
               onPin={() => togglePin(activity.id)}
               pinDisabled={isPinLocked}
               onViewDetails={() => setSelectedActivity(activity)}
+              tag={
+                selectedFilter === 'Selfie Spots' && index === 0 ? 'Most Recommended' : undefined
+              }
               className="w-[505px]"
             />
           ))}
@@ -208,7 +229,8 @@ const ActivitiesForm = ({
               <div className="flex size-[30px] items-center justify-center rounded-[10px] bg-[#75cfcc] px-1.5 py-0.5">
                 <Lightbulb size={18} className="text-black" />
               </div>
-              <h3 className="flex-1 text-base font-semibold leading-6 text-black">Travel Tips</h3>
+              <h3 className="text-base font-semibold leading-6 text-black">Travel Tips</h3>
+              <Sparkles size={20} fill="gold" />
             </div>
 
             {/* Content */}

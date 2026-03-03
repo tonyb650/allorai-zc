@@ -14,6 +14,7 @@ type ActivityCardProps = {
   pinDisabled?: boolean;
   onPin?: () => void;
   onViewDetails?: () => void;
+  tag?: string;
   className?: string;
 };
 
@@ -28,6 +29,7 @@ export const ActivityCard = ({
   pinDisabled = false,
   onPin,
   onViewDetails,
+  tag,
   className = '',
 }: ActivityCardProps) => {
   return (
@@ -47,8 +49,9 @@ export const ActivityCard = ({
             </h3>
             <div className="flex gap-6 text-xs font-semibold leading-4 tracking-wide text-black">
               <span>Location: {location}</span>
-              {/* <span>Est. Cost: {estimatedCost}</span> */}
-              {/* <span>Distance from Lodge: {distance}</span> */}
+            </div>
+            <div className="flex gap-6 text-xs font-semibold leading-4 tracking-wide text-black">
+              {estimatedCost && <span>Est. Cost: ${estimatedCost}</span>}
             </div>
           </div>
 
@@ -84,6 +87,11 @@ export const ActivityCard = ({
           <div className="flex-1 w-[158px] min-h-[1px] max-h-[139px] overflow-hidden rounded-sm bg-[#333]">
             {imageUrl && <img src={imageUrl} alt={title} className="h-full w-full object-cover" />}
           </div>
+          {tag && (
+            <span className="mt-auto inline-flex items-center rounded-full bg-[#75cfcc] px-2.5 py-1.5 text-xs font-semibold text-black">
+              {tag}
+            </span>
+          )}
         </div>
       </div>
     </div>
