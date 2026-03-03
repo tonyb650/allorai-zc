@@ -15,7 +15,7 @@ export async function sendTipsRequestMessage(data: ChatRequest): Promise<ChatRes
           {
             type: 'ai',
             content:
-              "To save time in app development, I'm returning some hard-coded sample data for the request.",
+              "To save time in app development, I'm returning hard-coded sample tips for a trip from SFO to FLL (Fort Lauderdale) on March 12–20, 2026.",
           },
         ],
         data: sampleResponseDataForTips(),
@@ -37,7 +37,7 @@ export async function sendTipsRequestMessage(data: ChatRequest): Promise<ChatRes
           {
             type: 'ai',
             content:
-              "I wasn't able to get real data. It might have taken too long. I'm returning some sample data for the request instead.",
+              "I wasn't able to get real data in time, so I'm returning sample tips for SFO → FLL (Fort Lauderdale), March 12–20, 2026 instead.",
           },
         ],
         data: sampleResponseDataForTips(),

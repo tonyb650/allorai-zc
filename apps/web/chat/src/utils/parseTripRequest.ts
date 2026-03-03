@@ -2,14 +2,14 @@ import { StartingPrefs } from '@allorai/shared-types';
 import { z } from 'zod';
 
 export const fallbackStartingPrefs: StartingPrefs = {
-  origin: 'JFK',
-  destination: 'CDG',
-  city: 'Paris, France',
-  departureDate: 'March 15, 2026',
-  returnDate: 'March 22, 2026',
+  origin: 'SFO',
+  destination: 'FLL',
+  city: 'Fort Lauderdale, FL',
+  departureDate: 'March 12, 2026',
+  returnDate: 'March 20, 2026',
   budgetIncludes: ['flights', 'lodging', 'dining'],
   transportation: ['car rental'],
-  preferences: 'family-friendly activities and local cuisine',
+  preferences: 'beachfront activities, local seafood, and relaxed sightseeing',
 };
 
 const startingPrefsSchema = z.object({

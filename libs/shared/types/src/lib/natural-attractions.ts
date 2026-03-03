@@ -9,17 +9,17 @@ export interface NaturalAttraction extends Activity {
 export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
   {
     id: 'nature-1',
-    name: 'Angeles National Forest',
+    name: 'Hugh Taylor Birch State Park',
     description:
-      'Discover over 700,000 acres of rugged wilderness just north of LA. Hike through towering pines, visit seasonal waterfalls, and spot wildlife along trails ranging from easy nature walks to challenging backcountry routes.',
-    estimatedCost: '5',
-    distance: '35mi',
-    location: 'Hollywood',
+      'Explore shaded coastal hammock trails, freshwater lagoon paddling, and quiet picnic areas in this urban state park between beach and Intracoastal.',
+    estimatedCost: '6',
+    distance: '3.4mi',
+    location: 'East Sunrise Boulevard, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Nature',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park2.jpg',
@@ -28,17 +28,17 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
   },
   {
     id: 'nature-2',
-    name: 'Mount San Antonio Summit',
+    name: 'Everglades Airboat Eco Tour',
     description:
-      'Take on the challenge of summiting Mount Baldy, the highest peak in the San Gabriel Mountains at 10,069 feet. The trail rewards hikers with sweeping views of the LA basin, desert, and on clear days, the Pacific Ocean.',
-    estimatedCost: '0',
-    distance: '45mi',
-    location: 'Hollywood',
+      'Glide through sawgrass marshes with naturalist guides to spot alligators, wading birds, and native plants in the western Everglades wetlands.',
+    estimatedCost: '49',
+    distance: '27mi',
+    location: 'Western Broward County',
     website: 'https://www.allorai.app',
     category: 'Nature',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains2.jpg',
@@ -47,17 +47,17 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
   },
   {
     id: 'nature-3',
-    name: 'Echo Park Lake',
+    name: 'Anne Kolb Nature Center',
     description:
-      'Rent a swan pedal boat and glide across this picturesque urban lake surrounded by palm trees and lotus flowers. The downtown skyline reflecting off the water makes for a perfect afternoon escape in the heart of the city.',
-    estimatedCost: '15',
-    distance: '2mi',
-    location: 'Hollywood',
+      'Wander mangrove boardwalks and climb the observation tower for broad coastal views; kayak rentals are available for the tidal waterways.',
+    estimatedCost: '0',
+    distance: '9.8mi',
+    location: 'West Lake Park, Hollywood, FL',
     website: 'https://www.allorai.app',
     category: 'Nature',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake2.jpg',
@@ -66,17 +66,17 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
   },
   {
     id: 'nature-4',
-    name: 'El Matador State Beach',
+    name: 'Fort Lauderdale Beach Sunrise Walk',
     description:
-      "Descend the blufftop staircase to discover one of Malibu's most stunning hidden beaches. Dramatic sea stacks, natural rock arches, and tide pools make this a photographer's paradise and a perfect spot for a sunset picnic.",
-    estimatedCost: '8',
-    distance: '28mi',
-    location: 'Hollywood',
+      'Start early along the beachfront promenade for warm Atlantic sunrise views, palm-lined paths, and a calm stretch ideal for morning photos.',
+    estimatedCost: '0',
+    distance: '2.7mi',
+    location: 'A1A Beachfront, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Nature',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach2.jpg',
@@ -87,6 +87,6 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
 
 export const SAMPLE_NATURE_RESPONSE: NaturalAttractionResponseData = {
   type: 'nature',
-  summary: 'sample natural attractions response summary',
+  summary: 'Sample Fort Lauderdale and nearby nature options for Mar 12–20, 2026.',
   options: SAMPLE_NATURAL_ATTRACTIONS,
 };

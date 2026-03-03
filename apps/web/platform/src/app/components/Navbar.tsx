@@ -97,7 +97,7 @@ export default function Navbar() {
                   navigate('/landing');
                 }}
               >
-                Log Out - {user.email?.substring(0, 1)}
+                Log Out
               </Button>
             ) : (
               <>

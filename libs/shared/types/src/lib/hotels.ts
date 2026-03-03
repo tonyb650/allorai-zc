@@ -17,46 +17,48 @@ export interface Hotel {
 export const SAMPLE_HOTELS: Hotel[] = [
   {
     id: 'a',
-    name: 'The Sapphire Grand',
-    location: 'Hollywood, Los Angeles',
+    name: 'Las Olas Harbor Hotel',
+    location: 'Downtown Fort Lauderdale (Las Olas), Fort Lauderdale',
     description:
-      'A luxurious five-star hotel in the heart of Hollywood with world-class amenities.',
-    website: 'https://www.sapphiregrand.com',
+      'A polished waterfront hotel with walkable access to Las Olas Boulevard dining, rooftop pool service, and marina views.',
+    website: 'https://www.lasolasharborhotel.com',
     num_of_stars: 5,
-    price: 289,
+    price: 312,
   },
   {
     id: 'b',
-    name: 'Coastal Breeze Inn',
-    location: 'Santa Monica, Los Angeles',
-    description: 'A charming beachside inn offering comfortable stays near the Santa Monica Pier.',
-    website: 'https://www.coastalbreezeinn.com',
+    name: 'Ocean Sun Inn',
+    location: 'Fort Lauderdale Beach, Fort Lauderdale',
+    description:
+      'A relaxed beachside inn two blocks from the sand with complimentary breakfast and bike rentals.',
+    website: 'https://www.oceansuninn.com',
     num_of_stars: 3,
-    price: 142,
+    price: 176,
   },
   {
     id: 'c',
-    name: 'Velvet Palm Suites',
-    location: 'Downtown, Los Angeles',
+    name: 'Canal View Suites',
+    location: 'Victoria Park, Fort Lauderdale',
     description:
-      'Modern upscale suites in downtown LA with stunning city views and premium services.',
-    website: 'https://www.velvetpalmsuites.com',
+      'Modern all-suite property with spacious rooms, kitchenettes, and quick rides to both beach and nightlife.',
+    website: 'https://www.canalviewsuites.com',
     num_of_stars: 4,
-    price: 198,
+    price: 224,
   },
   {
     id: 'd',
-    name: "The Wanderer's Lodge",
-    location: 'Venice Beach, Los Angeles',
-    description: 'A budget-friendly lodge steps away from the iconic Venice Beach boardwalk.',
-    website: 'https://www.wandererslodge.com',
+    name: 'Cypress Key Lodge',
+    location: 'Poinsettia Heights, Fort Lauderdale',
+    description:
+      'A value-focused boutique lodge with clean rooms, free parking, and easy access to I-95 and FLL airport.',
+    website: 'https://www.cypresskeylodge.com',
     num_of_stars: 2,
-    price: 89,
+    price: 124,
   },
 ];
 
 export const SAMPLE_HOTELS_RESPONSE: HotelResponseData = {
   type: 'hotel',
-  summary: 'sample hotel response summary',
+  summary: 'Sample hotel options in Fort Lauderdale for a Mar 12–20, 2026 stay.',
   options: SAMPLE_HOTELS,
 };

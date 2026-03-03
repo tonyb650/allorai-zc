@@ -9,17 +9,17 @@ export interface SelfieSpot extends Activity {
 export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
   {
     id: 'selfie-1',
-    name: 'Hachiko Dog Statue at Little Tokyo',
+    name: 'Las Olas Riverfront Murals',
     description:
-      "Snap a photo with the bronze statue of Hachiko, Japan's most loyal dog, located in the heart of Little Tokyo. The statue is a popular meeting point and a tribute to the famous Akita's unwavering devotion.",
+      'Capture colorful street art and neon-lit alley textures near Las Olas after sunset, one of the most photogenic downtown backdrops.',
     estimatedCost: '0',
-    distance: '0.5mi',
-    location: 'Hollywood',
+    distance: '0.7mi',
+    location: 'Las Olas Boulevard, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue2.jpg',
@@ -28,17 +28,17 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
   },
   {
     id: 'selfie-2',
-    name: 'Urban Light at LACMA',
+    name: 'Fort Lauderdale Beach Wave Wall',
     description:
-      "Pose among 202 restored vintage street lamps in Chris Burden's iconic installation outside the Los Angeles County Museum of Art. Best visited at dusk when the lamps illuminate against the twilight sky for a magical photo backdrop.",
+      'Pose at the iconic beachfront wave wall and palm-lined promenade with Atlantic blue water and lifeguard towers in the background.',
     estimatedCost: '0',
-    distance: '4mi',
-    location: 'Hollywood',
+    distance: '2.9mi',
+    location: 'A1A, Fort Lauderdale Beach',
     website: 'https://www.allorai.app',
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights2.jpg',
@@ -47,17 +47,17 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
   },
   {
     id: 'selfie-3',
-    name: 'Arts District Murals',
+    name: 'Bonnet House Orchid Garden',
     description:
-      "Wander through LA's vibrant Arts District where every alley and building wall is a canvas. Massive, colorful murals by world-renowned street artists create an ever-changing open-air gallery perfect for eye-catching photos.",
+      'Frame tropical blooms, winding pathways, and historic estate architecture in a shaded garden setting that looks great in soft afternoon light.',
     estimatedCost: '0',
-    distance: '1mi',
-    location: 'Hollywood',
+    distance: '3.2mi',
+    location: 'Bonnet House Grounds, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural2.jpg',
@@ -66,17 +66,17 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
   },
   {
     id: 'selfie-4',
-    name: 'Griffith Observatory',
+    name: 'Pier 66 Marina Overlook',
     description:
-      'Stand on the terrace of this Art Deco landmark perched on the slopes of Mount Hollywood for sweeping panoramic views of the LA skyline, the Hollywood Sign, and the Pacific Ocean. Free admission makes it a must-visit.',
+      'Shoot panoramic skyline, superyacht, and waterway views from the marina overlook where golden hour reflections are especially dramatic.',
     estimatedCost: '0',
-    distance: '8mi',
-    location: 'Hollywood',
+    distance: '2.4mi',
+    location: '17th Street Causeway, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory2.jpg',
@@ -87,6 +87,6 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
 
 export const SAMPLE_SELFIE_SPOTS_RESPONSE: SelfieResponseData = {
   type: 'selfie',
-  summary: 'sample selfie spots response summary',
+  summary: 'Sample photo-friendly Fort Lauderdale selfie spots for Mar 12–20, 2026.',
   options: SAMPLE_SELIFE_SPOTS,
 };

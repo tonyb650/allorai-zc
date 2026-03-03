@@ -22,8 +22,8 @@ const SummaryInstructions = ({
   returnFlight,
   hotel,
 }: SummaryInstructionsProps) => {
-  const departureDate = departureDateData ? formatDate(departureDateData) : 'March 15, 2026';
-  const returnDate = returnDateData ? formatDate(returnDateData) : 'March 22, 2026';
+  const departureDate = departureDateData ? formatDate(departureDateData) : 'March 12, 2026';
+  const returnDate = returnDateData ? formatDate(returnDateData) : 'March 20, 2026';
 
   // Calculate total cost
   const departureCost = departureFlight?.price ?? 0;
@@ -37,20 +37,16 @@ const SummaryInstructions = ({
       {/* Flights - Departing */}
       {departureFlight && (
         <div className="flex flex-col gap-1">
-          <h3 className="font-semibold text-xl leading-[28.8px]">
-            Departing ({departureDate})
-          </h3>
-          <FlightChip flight={departureFlight} direction='outbound' />
+          <h3 className="font-semibold text-xl leading-[28.8px]">Departing ({departureDate})</h3>
+          <FlightChip flight={departureFlight} direction="outbound" />
         </div>
       )}
 
       {/* Flights - Return */}
       {returnFlight && (
         <div className="flex flex-col gap-1">
-          <h3 className="font-semibold text-xl leading-[28.8px]">
-            Return ({returnDate})
-          </h3>
-          <FlightChip flight={returnFlight} direction='return' />
+          <h3 className="font-semibold text-xl leading-[28.8px]">Return ({returnDate})</h3>
+          <FlightChip flight={returnFlight} direction="return" />
         </div>
       )}
 
@@ -66,9 +62,7 @@ const SummaryInstructions = ({
       {(departureFlight || returnFlight || hotel) && (
         <div className="flex flex-col gap-1 pt-2 border-t-2 border-black/20">
           <div className="flex justify-between items-center">
-            <h3 className="font-semibold text-xl  leading-[28.8px]">
-              Total Cost
-            </h3>
+            <h3 className="font-semibold text-xl  leading-[28.8px]">Total Cost</h3>
             <span className="font-semibold text-2xl ">${totalCost.toLocaleString()}</span>
           </div>
         </div>

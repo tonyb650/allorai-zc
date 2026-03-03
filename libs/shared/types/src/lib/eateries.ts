@@ -9,17 +9,17 @@ export interface Eatery extends Activity {
 export const SAMPLE_RESTAURANTS: Eatery[] = [
   {
     id: 'food-1',
-    name: "Bludso's BBQ",
+    name: 'Cove & Current Seafood House',
     description:
-      'Texas-style barbecue that has earned a cult following in LA. Pitmaster Kevin Bludso slow-smokes brisket, ribs, and hot links over oak wood for hours, delivering tender, smoky perfection with every bite.',
-    estimatedCost: '30',
-    distance: '4mi',
-    location: 'Hollywood',
+      'A lively waterfront seafood spot known for local mahi tacos, stone crab claws in season, and sunset patio dining on the Intracoastal.',
+    estimatedCost: '42',
+    distance: '1.2mi',
+    location: 'Las Olas, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Food',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq2.jpg',
@@ -28,17 +28,17 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
   },
   {
     id: 'food-2',
-    name: "Irv's Burgers",
+    name: 'Harbor Flame Grill',
     description:
-      'A beloved LA burger stand serving smash-style burgers with crispy edges and juicy centers since the 1940s. The no-frills menu focuses on what matters — quality beef, melted cheese, and perfectly toasted buns.',
-    estimatedCost: '15',
-    distance: '3mi',
-    location: 'Hollywood',
+      'A casual modern grill with hand-pressed burgers, blackened fish sandwiches, and crisp yucca fries, popular with locals after beach days.',
+    estimatedCost: '22',
+    distance: '2.1mi',
+    location: 'Central Beach, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Food',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger2.jpg',
@@ -47,17 +47,17 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
   },
   {
     id: 'food-3',
-    name: 'Daikokuya Ramen',
+    name: 'Riverwalk Noodle Bar',
     description:
-      'Iconic Little Tokyo ramen spot famous for their rich tonkotsu broth simmered for over 20 hours and tender chashu pork. Expect a line out the door, but the authentic flavors and generous portions are worth the wait.',
-    estimatedCost: '18',
-    distance: '0.5mi',
-    location: 'Hollywood',
+      'An energetic noodle shop serving tonkotsu ramen, spicy shrimp bao, and late-night small plates near the Riverwalk Arts district.',
+    estimatedCost: '24',
+    distance: '0.8mi',
+    location: 'Downtown Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Food',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen2.jpg',
@@ -66,17 +66,17 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
   },
   {
     id: 'food-4',
-    name: 'Matcha-Do Taiyaki',
+    name: 'Sunrise Gelato & Cafe',
     description:
-      'Freshly pressed fish-shaped waffle cones filled with creamy soft serve, sweet red bean paste, or rich matcha custard. This Japanese street food favorite is as fun to photograph as it is to eat.',
-    estimatedCost: '10',
-    distance: '0.8mi',
-    location: 'Hollywood',
+      'A bright cafe serving Cuban coffee, guava pastries, and house-made gelato, perfect for quick breakfasts before heading to the beach.',
+    estimatedCost: '14',
+    distance: '0.6mi',
+    location: 'Himmarshee Village, Fort Lauderdale',
     website: 'https://www.allorai.app',
     category: 'Food',
     pinned: false,
     imageUrl:
-    'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
+      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
     imageUrls: [
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
       'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki2.jpg',
@@ -87,6 +87,6 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
 
 export const SAMPLE_RESTAURANTS_RESPONSE: EateryResponseData = {
   type: 'restaurant',
-  summary: 'sample food and eatery response summary',
+  summary: 'Sample Fort Lauderdale food options for a Mar 12–20, 2026 stay.',
   options: SAMPLE_RESTAURANTS,
 };
