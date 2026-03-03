@@ -4,7 +4,7 @@ import ActivitiesForm from '../../components/forms/ActivitiesForm';
 
 const ActivitiesPage = () => {
   const navigate = useNavigate();
-  const { activityOptions, travelTips, tripData, togglePin } = useTripStore();
+  const { activityOptions, travelTips, tripData, togglePin, setActivityOptions } = useTripStore();
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -13,6 +13,7 @@ const ActivitiesPage = () => {
         activityOptions={activityOptions}
         travelTips={travelTips}
         togglePin={togglePin}
+        setActivityOptions={setActivityOptions}
         onReviewAndSave={() => navigate('/chat/itinerary')}
         onModifyDetails={() => navigate('/landing')}
       />

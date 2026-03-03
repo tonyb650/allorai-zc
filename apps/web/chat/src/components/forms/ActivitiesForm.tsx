@@ -22,6 +22,7 @@ type ActivityFormProps = ActivityFormData & {
   activityOptions: Activity[];
   travelTips: TravelTips[];
   togglePin: (activityId: string) => void;
+  setActivityOptions: (updater: Activity[] | ((prev: Activity[]) => Activity[])) => void;
   onReviewAndSave: () => void;
   onModifyDetails: () => void;
 };
@@ -42,6 +43,7 @@ const ActivitiesForm = ({
   returnFlight,
   hotel,
   togglePin,
+  setActivityOptions,
   onReviewAndSave,
   onModifyDetails,
 }: ActivityFormProps) => {
@@ -59,15 +61,24 @@ const ActivitiesForm = ({
     'Selfie Spots': [0, 20],
   };
 
-  const randomCostsRef = useRef<Map<string, string>>(new Map());
-  const getEstimatedCost = (activity: Activity): string => {
-    if (activity.estimatedCost) return activity.estimatedCost;
-    if (!randomCostsRef.current.has(activity.id)) {
-      const [min, max] = COST_RANGES[activity.category];
-      const cost = Math.floor(Math.random() * (max - min + 1)) + min;
-      randomCostsRef.current.set(activity.id, String(cost));
+  const hasPatchedCosts = useRef(false);
+  if (!hasPatchedCosts.current) {
+    const needsPatch = activityOptions.some((a) => !a.estimatedCost);
+    if (needsPatch) {
+      hasPatchedCosts.current = true;
+      setActivityOptions((prev) =>
+        prev.map((a) => {
+          if (a.estimatedCost) return a;
+          const [min, max] = COST_RANGES[a.category];
+          const cost = Math.floor(Math.random() * (max - min + 1)) + min;
+          return { ...a, estimatedCost: String(cost) };
+        }),
+      );
     }
-    return randomCostsRef.current.get(activity.id)!;
+  }
+
+  const getEstimatedCost = (activity: Activity): string => {
+    return activity.estimatedCost || '0';
   };
 
   const budgetItems = useMemo(() => {
