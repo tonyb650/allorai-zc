@@ -21,13 +21,13 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
   // Activities (4)
   {
     id: 'activities-1',
-    name: 'Hollywood Bowl Concert',
+    name: 'Water Taxi All-Day Pass',
     description:
-      'You can catch a live performance at this legendary outdoor amphitheater nestled in the Hollywood Hills. Bring a picnic and enjoy world-class music under the stars, from classical orchestras to contemporary headliners.',
-    estimatedCost: '60',
-    distance: '6mi',
+      'Cruise Fort Lauderdale’s Intracoastal Waterway with unlimited hop-on/hop-off stops from downtown to the beach and waterfront neighborhoods.',
+    estimatedCost: '38',
+    distance: '1mi',
     category: 'Activities',
-    location: 'Hollywood',
+    location: 'Downtown Fort Lauderdale',
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
@@ -40,13 +40,13 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
   },
   {
     id: 'activities-2',
-    name: 'The Broad Museum',
+    name: 'Bonnet House Museum & Gardens',
     description:
-      'A contemporary art museum housing nearly 2,000 works including pieces by Warhol, Basquiat, and Kusama. The striking honeycomb architecture is an attraction in itself. General admission is free with advance reservation.',
-    estimatedCost: '0',
-    distance: '1.5mi',
+      'Tour a preserved 1920s estate featuring tropical gardens, artist studios, and historic architecture steps from the beach corridor.',
+    estimatedCost: '25',
+    distance: '3mi',
     category: 'Activities',
-    location: 'Hollywood',
+    location: 'Fort Lauderdale Beach',
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
@@ -59,13 +59,13 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
   },
   {
     id: 'activities-3',
-    name: 'Pacific Park at Santa Monica Pier',
+    name: 'Jungle Queen Riverboat Cruise',
     description:
-      'Ride the iconic solar-powered Ferris wheel, brave the roller coaster over the ocean, and play classic carnival games on the pier. The amusement park lights up spectacularly at night with views stretching down the coastline.',
-    estimatedCost: '35',
-    distance: '15mi',
+      'Take a narrated sightseeing cruise past mansions and mega-yachts, then stop for an island-style dinner show on a private tropical isle.',
+    estimatedCost: '62',
+    distance: '2.5mi',
     category: 'Activities',
-    location: 'Hollywood',
+    location: 'Fort Lauderdale Beach',
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
@@ -78,13 +78,13 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
   },
   {
     id: 'activities-4',
-    name: 'Highland Park Bowl',
+    name: 'NSU Art Museum Fort Lauderdale',
     description:
-      'Bowl in style at this beautifully restored 1927 bowling alley featuring original hand-painted murals, craft cocktails, and wood-fired Italian food. A unique night out that blends vintage LA charm with modern entertainment.',
-    estimatedCost: '25',
-    distance: '7mi',
+      'Browse contemporary exhibitions and Latin American collections at a modern museum in the city center, ideal for a cooler afternoon.',
+    estimatedCost: '16',
+    distance: '0.4mi',
     category: 'Activities',
-    location: 'Hollywood',
+    location: 'Downtown Fort Lauderdale',
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
@@ -99,6 +99,6 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
 
 export const SAMPLE_ACTIVITIES_RESPONSE: ActivitiesResponseData = {
   type: 'activities',
-  summary: 'sample activities response summary',
+  summary: 'Sample Fort Lauderdale activities for a Mar 12–20, 2026 trip.',
   options: SAMPLE_ACTIVITIES,
 };

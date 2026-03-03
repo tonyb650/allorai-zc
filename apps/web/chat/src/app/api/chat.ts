@@ -32,7 +32,7 @@ export async function sendChatMessage(data: ChatRequest): Promise<ChatResponse> 
           {
             type: 'ai',
             content:
-              "I'm returning some hard-coded sample data for the request to save time in development.",
+              "I'm returning hard-coded sample data for a trip from SFO to FLL (Fort Lauderdale) departing March 12, 2026 and returning March 20, 2026 to save time in development.",
           },
         ],
         data: responseDataForStep(data),
@@ -41,15 +41,19 @@ export async function sendChatMessage(data: ChatRequest): Promise<ChatResponse> 
       };
     }
     const response = await apiClient.post<ChatResponse>('/chat/message', data);
-  
-    if (response.data.messages[response.data.messages.length - 1].content.match(/something went wrong/gi)) {
+
+    if (
+      response.data.messages[response.data.messages.length - 1].content.match(
+        /something went wrong/gi,
+      )
+    ) {
       return {
         messages: [
           ...data.messages,
           {
             type: 'ai',
             content:
-              "I wasn't able to get real data. It might have taken too long. I'm returning some sample data for the request instead.",
+              "I wasn't able to get real data in time, so I'm returning sample data for SFO → FLL (Fort Lauderdale), March 12–20, 2026 instead.",
           },
         ],
         data: responseDataForStep(data),
@@ -68,7 +72,7 @@ export async function sendChatMessage(data: ChatRequest): Promise<ChatResponse> 
           {
             type: 'ai',
             content:
-              "I wasn't able to get real data. It might have taken too long. I'm returning some sample data for the request instead.",
+              "I wasn't able to get real data in time, so I'm returning sample data for SFO → FLL (Fort Lauderdale), March 12–20, 2026 instead.",
           },
         ],
         data: responseDataForStep(data),

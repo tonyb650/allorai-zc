@@ -35,7 +35,7 @@ const ChatPage = () => {
   const [error, setError] = useState<string | undefined>(undefined);
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
-  const forceRealUserInputOnLanding = false;
+  const forceRealUserInputOnLanding = true;
 
   // empty dependency array is correct in this case. We never want the effect to run again no matter what changes
   useEffect(() => {
