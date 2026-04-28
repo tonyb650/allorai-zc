@@ -16,7 +16,7 @@ importers:
         version: 2.94.0
       axios:
         specifier: ^1.13.2
-        version: 1.13.2(debug@4.4.3)
+        version: 1.13.2
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -226,8 +226,8 @@ importers:
         specifier: ^8.40.0
         version: 8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       zephyr-rspack-plugin:
-        specifier: ^0.1.3
-        version: 0.1.3(@rspack/core@1.7.2(@swc/helpers@0.5.18))(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12))
+        specifier: ^1.0.2
+        version: 1.0.2(@rspack/core@1.7.2(@swc/helpers@0.5.18))(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12))
       zustand:
         specifier: ^5.0.11
         version: 5.0.11(@types/react@19.2.8)(react@19.2.3)
@@ -3475,6 +3475,9 @@ packages:
   axios@1.13.2:
     resolution: {integrity: sha512-VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==}
 
+  axios@1.15.2:
+    resolution: {integrity: sha512-wLrXxPtcrPTsNlJmKjkPnNPK2Ihe0hn0wGSaTEiHRPxwjvJwT3hKmXF4dpqxmPO9SoNb2FsYXj/xEo0gHN+D5A==}
+
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
     engines: {node: '>= 0.4'}
@@ -6510,6 +6513,10 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
+  proxy-from-env@2.1.0:
+    resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
+    engines: {node: '>=10'}
+
   prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
 
@@ -7996,19 +8003,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zephyr-agent@0.1.3:
-    resolution: {integrity: sha512-Efw7MaB+BAjU3/Ye1ywKLkuFbNb8ECujzxyoktrB+aoHe/xYfJDgTBasTQH0yqOCLXbllunv6He1R4LoeNNDiw==}
+  zephyr-agent@1.0.2:
+    resolution: {integrity: sha512-bhihXEIN8uAiF0xMH0+9KEbFrM6XRBqyrIGKYJ+A1IFqiRsXVkxiX9HgHnzkamueJVBhHNkgTBB3lgdB7gSu5g==}
 
-  zephyr-edge-contract@0.1.3:
-    resolution: {integrity: sha512-Z1rbUwKas6BAdpVmassa/8LP68Kgqdx9tgVfBaeT2mRXeDAusye3tLZ75KX7EFt+NG9PlkJMVDQTcE9ZKSKWgg==}
+  zephyr-edge-contract@1.0.2:
+    resolution: {integrity: sha512-6EZHOYDILQGa3LBSJg6Tz07Gl+2u5S+3Z5AZAITmOi9puEuHF4yhW14rBbg9UfFimMls/q+lMjTK8ia6wswmQQ==}
 
-  zephyr-rspack-plugin@0.1.3:
-    resolution: {integrity: sha512-xi0wOqTCLIA1kQNjHW1iagkcZIxLNxWIMaoZJPO0FU5SrYAIv3NNI6LbMuMaEvD+nr6pSrBvzNXTxzZsnNtQEg==}
+  zephyr-rspack-plugin@1.0.2:
+    resolution: {integrity: sha512-X8Rs5YUdt2J1UZ5D3rEVTINtQ+sal5Gh74LEfy5l57sH5j3F/AdvOBsk0Obe0/MZD6hzlUgC98zhjBGCMpr/vA==}
     peerDependencies:
-      '@rspack/core': ^1.0.0
+      '@rspack/core': ^1.0.0 || ^2.0.0-0
 
-  zephyr-xpack-internal@0.1.3:
-    resolution: {integrity: sha512-jx3NUhTo2lccMp4Gv3ZdFc7JloRG9jEqZ1cWIRtUywy5TLvpJaOatsS0ROTrBe1OcUFPUpWmyHLcJsmFoFHNLg==}
+  zephyr-xpack-internal@1.0.2:
+    resolution: {integrity: sha512-TMoR2jBC61q3nFiBDHMOSFNvHgMp4Lq+tuA2jP+o/349XTaX0/rnFwA/E5RaY2cum2ToibjgA/WDwRoK9OXK5A==}
 
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
@@ -9467,7 +9474,7 @@ snapshots:
       '@module-federation/third-party-dts-extractor': 0.21.6
       adm-zip: 0.5.16
       ansi-colors: 4.1.3
-      axios: 1.13.2(debug@4.4.3)
+      axios: 1.13.2
       chalk: 3.0.0
       fs-extra: 9.1.0
       isomorphic-ws: 5.0.0(ws@8.18.0)
@@ -9492,7 +9499,7 @@ snapshots:
       '@module-federation/third-party-dts-extractor': 0.22.1
       adm-zip: 0.5.16
       ansi-colors: 4.1.3
-      axios: 1.13.2(debug@4.4.3)
+      axios: 1.13.2
       chalk: 3.0.0
       fs-extra: 9.1.0
       isomorphic-ws: 5.0.0(ws@8.18.0)
@@ -11858,16 +11865,24 @@ snapshots:
 
   axe-core@4.11.1: {}
 
-  axios-retry@4.5.0(axios@1.13.2):
+  axios-retry@4.5.0(axios@1.15.2(debug@4.4.3)):
     dependencies:
-      axios: 1.13.2(debug@4.4.3)
+      axios: 1.15.2(debug@4.4.3)
       is-retry-allowed: 2.2.0
 
-  axios@1.13.2(debug@4.4.3):
+  axios@1.13.2:
     dependencies:
       follow-redirects: 1.15.11(debug@4.4.3)
       form-data: 4.0.5
       proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.15.2(debug@4.4.3):
+    dependencies:
+      follow-redirects: 1.15.11(debug@4.4.3)
+      form-data: 4.0.5
+      proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
 
@@ -14746,7 +14761,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.13.2(debug@4.4.3)
+      axios: 1.13.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -15361,6 +15376,8 @@ snapshots:
       ipaddr.js: 1.9.1
 
   proxy-from-env@1.1.0: {}
+
+  proxy-from-env@2.1.0: {}
 
   prr@1.0.1:
     optional: true
@@ -17001,44 +17018,45 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zephyr-agent@0.1.3:
+  zephyr-agent@1.0.2:
     dependencies:
       '@toon-format/toon': 0.9.0
-      axios: 1.13.2(debug@4.4.3)
-      axios-retry: 4.5.0(axios@1.13.2)
+      axios: 1.15.2(debug@4.4.3)
+      axios-retry: 4.5.0(axios@1.15.2(debug@4.4.3))
       debug: 4.4.3
       eventsource: 4.1.0
       git-url-parse: 15.0.0
+      https-proxy-agent: 7.0.6
       is-ci: 4.1.0
       jose: 5.10.0
       node-persist: 4.0.4
       open: 10.2.0
       proper-lockfile: 4.1.2
       tslib: 2.8.1
-      zephyr-edge-contract: 0.1.3
+      zephyr-edge-contract: 1.0.2
     transitivePeerDependencies:
       - supports-color
 
-  zephyr-edge-contract@0.1.3:
+  zephyr-edge-contract@1.0.2:
     dependencies:
       tslib: 2.8.1
 
-  zephyr-rspack-plugin@0.1.3(@rspack/core@1.7.2(@swc/helpers@0.5.18))(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12)):
+  zephyr-rspack-plugin@1.0.2(@rspack/core@1.7.2(@swc/helpers@0.5.18))(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12)):
     dependencies:
       '@rspack/core': 1.7.2(@swc/helpers@0.5.18)
       tslib: 2.8.1
-      zephyr-agent: 0.1.3
-      zephyr-xpack-internal: 0.1.3(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12))
+      zephyr-agent: 1.0.2
+      zephyr-xpack-internal: 1.0.2(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12))
     transitivePeerDependencies:
       - supports-color
       - webpack
 
-  zephyr-xpack-internal@0.1.3(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12)):
+  zephyr-xpack-internal@1.0.2(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12)):
     dependencies:
       '@module-federation/automatic-vendor-federation': 1.2.1(webpack@5.104.1(@swc/core@1.5.29(@swc/helpers@0.5.18))(esbuild@0.19.12))
       tslib: 2.8.1
-      zephyr-agent: 0.1.3
-      zephyr-edge-contract: 0.1.3
+      zephyr-agent: 1.0.2
+      zephyr-edge-contract: 1.0.2
     transitivePeerDependencies:
       - supports-color
       - webpack
