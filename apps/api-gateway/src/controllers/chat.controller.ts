@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
 import { chatAgent } from '../services/agents/chat-agent.service';
 import { saveChatMessage, createChatSession } from '../services/db/chat.service';
@@ -63,9 +64,14 @@ const createChatSessionHandler = async (req: Request, res: Response): Promise<vo
   }
 
   const { supabase } = req;
-  const {
-    data: { id },
-  } = await createChatSession({ supabase });
+  let id: string;
+  if (supabase) {
+    ({
+      data: { id },
+    } = await createChatSession({ supabase }));
+  } else {
+    id = randomUUID();
+  }
 
   // Set session ID in cookie
   res.cookie('chat_session_id', id, {
@@ -100,14 +106,16 @@ const chatMessageHandler = async (req: Request, res: Response): Promise<void> =>
   const humanChatMessage = messages[messages.length - 1].content;
 
   // 2. Save user message to database
-  const { data: humanChatData } = await saveChatMessage({
-    supabase,
-    sessionId,
-    role: 'user',
-    content: { text: humanChatMessage },
-  });
-  logger.debug('Human chat request saved to database:');
-  logger.debug(humanChatData);
+  if (supabase) {
+    const { data: humanChatData } = await saveChatMessage({
+      supabase,
+      sessionId,
+      role: 'user',
+      content: { text: humanChatMessage },
+    });
+    logger.debug('Human chat request saved to database:');
+    logger.debug(humanChatData);
+  }
   // 3. Make request to agentAPI
   const chatRequest: ChatRequest = {
     messages,
@@ -149,14 +157,16 @@ const chatMessageHandler = async (req: Request, res: Response): Promise<void> =>
   logger.debug(response);
 
   // 4. Save AI response message to database
-  const { data: aiChatData } = await saveChatMessage({
-    supabase,
-    sessionId,
-    role: 'assistant',
-    content: { text: response.messages[response.messages.length - 1].content },
-  });
-  logger.debug('AI chat response saved to database:');
-  logger.debug(aiChatData);
+  if (supabase) {
+    const { data: aiChatData } = await saveChatMessage({
+      supabase,
+      sessionId,
+      role: 'assistant',
+      content: { text: response.messages[response.messages.length - 1].content },
+    });
+    logger.debug('AI chat response saved to database:');
+    logger.debug(aiChatData);
+  }
 
   // 5. Return the assistant response
   res.status(200).json(response);

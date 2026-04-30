@@ -4,13 +4,18 @@ import logger from '../utils/logger.js';
 
 let supabaseClient: SupabaseClient | null = null;
 
-export const connectToSupabase = (): SupabaseClient => {
+export const connectToSupabase = (): SupabaseClient | null => {
+  if (config.DISABLE_DB) {
+    logger.info('ℹ️  DISABLE_DB=true — skipping Supabase initialization');
+    return null;
+  }
+
   if (supabaseClient) {
     return supabaseClient;
   }
 
   try {
-    supabaseClient = createClient(config.SUPABASE_URL, config.SUPABASE_KEY, {
+    supabaseClient = createClient(config.SUPABASE_URL!, config.SUPABASE_KEY!, {
       auth: {
         autoRefreshToken: true,
         persistSession: false,

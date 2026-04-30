@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.NX_PUBLIC_API_BASE_URL || 'http://localhost:3001';
+const API_BASE_URL = process.env.NX_PUBLIC_API_BASE_URL || 'http://localhost:3005';
 
+console.log(API_BASE_URL)
 export const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
   headers: {

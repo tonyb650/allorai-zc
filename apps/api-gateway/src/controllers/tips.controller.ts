@@ -61,15 +61,17 @@ const tipsHandler = async (req: Request, res: Response): Promise<void> => {
   const { sessionId, messages, trip } = parseResult.data;
   const humanChatMessage = messages[messages.length - 1].content;
 
-  // 2. Save user message to database 
-  const { data: humanChatData } = await saveChatMessage({
-    supabase,
-    sessionId,
-    role: 'user',
-    content: { text: humanChatMessage },
-  });
-  logger.debug('Human chat request saved to database:');
-  logger.debug(humanChatData);
+  // 2. Save user message to database
+  if (supabase) {
+    const { data: humanChatData } = await saveChatMessage({
+      supabase,
+      sessionId,
+      role: 'user',
+      content: { text: humanChatMessage },
+    });
+    logger.debug('Human chat request saved to database:');
+    logger.debug(humanChatData);
+  }
   // 3. Make request to agentAPI
   const tipsRequest: ChatRequest = {
     messages,
@@ -85,14 +87,16 @@ const tipsHandler = async (req: Request, res: Response): Promise<void> => {
   logger.debug(response);
 
   // 4. Save AI response message to database
-  const { data: aiChatData } = await saveChatMessage({
-    supabase,
-    sessionId,
-    role: 'assistant',
-    content: { text: "I'm providing you with travel tips" },
-  });
-  logger.debug('AI chat response (tips) saved to database:');
-  logger.debug(aiChatData);
+  if (supabase) {
+    const { data: aiChatData } = await saveChatMessage({
+      supabase,
+      sessionId,
+      role: 'assistant',
+      content: { text: "I'm providing you with travel tips" },
+    });
+    logger.debug('AI chat response (tips) saved to database:');
+    logger.debug(aiChatData);
+  }
 
   // 5. Return the assistant response
   res.status(200).json(response);
