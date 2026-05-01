@@ -11,6 +11,7 @@ export class BaseAgentService {
       timeout: 60_000,
       headers: {
         'Content-Type': 'application/json',
+        'x-api-key': config.INTERNAL_API_KEY,
       },
     });
 
