@@ -9,6 +9,9 @@ import tipsRouter from '../routes/tips.routes';
 
 const createApp = () => {
   const app: Express = express(); // Express 'app' instance
+  // Trust the first proxy hop so req.ip reflects the real client behind Railway's
+  // load balancer; without this, every request shares one rate-limit bucket.
+  app.set('trust proxy', 1);
   // Middleware
   app.use(express.json());
   app.use(cookieParser());

@@ -101,8 +101,9 @@
     }
   },
   "dependencies": {
-    "express": "^4.21.2",
     "@supabase/supabase-js": "^2.94.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.4.1",
     "zod": "^4.3.6"
   }
 }
