@@ -17,11 +17,10 @@
     "strict": true,
     "target": "es2022",
     "customConditions": ["@allorai/source"],
-    "baseUrl": ".",
     "paths": {
-      "itineraries/*": ["apps/web/itineraries/src/*"],
-      "@allorai/shared-ui": ["libs/shared/ui/src/index.ts"],
-      "@allorai/shared-types": ["libs/shared/types/src/index.ts"]
+      "itineraries/*": ["./apps/web/itineraries/src/*"],
+      "@allorai/shared-ui": ["./libs/shared/ui/src/index.ts"],
+      "@allorai/shared-types": ["./libs/shared/types/src/index.ts"]
     }
   }
 }
