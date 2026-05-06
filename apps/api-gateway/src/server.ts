@@ -1,14 +1,10 @@
 import { type Express } from 'express';
 import { config } from './config/env.js';
-import { connectToSupabase } from './startup/connectToDB.js';
 import createApp from './startup/createApp.js';
 import logger from './utils/logger.js';
 
 // Create express app and add all middleware and routes
 const app: Express = createApp();
-
-// Connect to Supabase
-connectToSupabase();
 
 // Start server
 app.listen(config.PORT, () => {

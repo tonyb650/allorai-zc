@@ -14,16 +14,47 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
+    let cancelled = false;
+
+    const ensureSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
+      if (session) {
+        if (!cancelled) {
+          setUser(session.user);
+          setLoading(false);
+        }
+        return;
+      }
+
+      const { data, error } = await supabase.auth.signInAnonymously();
+      if (cancelled) return;
+      if (error) {
+        console.error('Anonymous sign-in failed:', error.message);
+      }
+      setUser(data.session?.user ?? null);
       setLoading(false);
-    });
+    };
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    ensureSession();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null);
+      // After explicit sign-out, drop straight back to an anonymous session so
+      // the user can keep using the app without a re-login.
+      if (event === 'SIGNED_OUT') {
+        supabase.auth.signInAnonymously();
+      }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
 
   return <AuthContext.Provider value={{ user, loading }}>{children}</AuthContext.Provider>;

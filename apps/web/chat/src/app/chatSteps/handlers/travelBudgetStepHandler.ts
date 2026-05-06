@@ -1,6 +1,6 @@
 import { type ChatResponse } from '@allorai/shared-types';
 import { FlightResponseDataSchema } from '../schemas/flightResponseSchema';
-import { createChatSession, sendChatMessage } from '../../api/chat';
+import { sendChatMessage } from '../../api/chat';
 import { StepHandler } from '../types';
 import { createChatRequest } from '../helpers/chatRequest';
 import { uniqueOptions } from '../../../utils/utils';
@@ -19,9 +19,6 @@ export const travelBudgetStepHandler: StepHandler = async ({
         error: 'Please select both flight and lodging preferences',
       };
     }
-
-    // 1.5 Create a new chat session before sending the first message
-    await createChatSession();
 
     // 2. Format api request correctly
     // FORMAT: Here, we format the user selection to create a message that the LLM

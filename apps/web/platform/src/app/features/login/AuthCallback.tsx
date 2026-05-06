@@ -12,7 +12,7 @@ const AuthCallback = () => {
 
     if (errorParam) {
       console.error('Auth callback error:', errorParam);
-      navigate('/login', { replace: true });
+      navigate('/landing', { replace: true });
       return;
     }
 
@@ -21,7 +21,7 @@ const AuthCallback = () => {
       supabase.auth.exchangeCodeForSession(window.location.search).then(({ error }) => {
         if (error) {
           console.error('Auth callback error:', error.message);
-          navigate('/login', { replace: true });
+          navigate('/landing', { replace: true });
         } else {
           const redirectPath = localStorage.getItem('loginRedirectPath') || '/';
           localStorage.removeItem('loginRedirectPath');

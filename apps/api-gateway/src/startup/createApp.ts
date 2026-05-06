@@ -1,10 +1,8 @@
-import cookieParser from 'cookie-parser';
 import express, { Express, Request, Response } from 'express';
 import { corsMiddleware } from '../middleware/cors.middleware';
 import { errorHandler } from '../middleware/error.middleware';
 import { loggerMiddleware } from '../middleware/logger.middleware';
 import chatRouter from '../routes/chat.routes';
-import { requireSupabase } from '../middleware/supabase.middleware';
 import tipsRouter from '../routes/tips.routes';
 
 const createApp = () => {
@@ -14,11 +12,9 @@ const createApp = () => {
   app.set('trust proxy', 1);
   // Middleware
   app.use(express.json());
-  app.use(cookieParser());
   app.use(express.urlencoded({ extended: true }));
   app.use(corsMiddleware);
   app.use(loggerMiddleware);
-  app.use(requireSupabase);
 
   // Root endpoint
   app.get('/', (req: Request, res: Response) => {

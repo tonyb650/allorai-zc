@@ -234,9 +234,6 @@ importers:
 
   apps/api-gateway:
     dependencies:
-      '@supabase/supabase-js':
-        specifier: ^2.94.0
-        version: 2.94.0
       express:
         specifier: ^4.21.2
         version: 4.22.1

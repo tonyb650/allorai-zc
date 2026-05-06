@@ -1,79 +1,25 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TripData, Activity } from '@allorai/shared-types';
 import { useTripStore } from '../../store/useTripStore';
 import ItineraryForm from '../../components/forms/ItineraryForm';
 import { supabase } from '../lib/supabase';
 import { saveTrip } from '../lib/tripService';
 
-const PENDING_SAVE_KEY = 'pendingSaveTrip';
-
 const ItineraryPage = () => {
   const navigate = useNavigate();
-  const { activityOptions, tripData, updateTripData, setActivityOptions } = useTripStore();
-
-  // Complete a pending trip save that was deferred through OAuth redirect
-  useEffect(() => {
-    const pendingRaw = localStorage.getItem(PENDING_SAVE_KEY);
-    if (!pendingRaw) return;
-
-    // Remove immediately to prevent duplicate saves on re-renders or StrictMode double-invocation
-    localStorage.removeItem(PENDING_SAVE_KEY);
-
-    const completePendingSave = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      if (!session) return;
-
-      const pending: { tripData: TripData; activities: Activity[] } = JSON.parse(pendingRaw);
-
-      updateTripData(pending.tripData);
-      setActivityOptions(pending.activities);
-
-      try {
-        await saveTrip(
-          session.user.id,
-          pending.tripData,
-          pending.activities.filter((a) => a.pinned)
-        );
-      } catch (err) {
-        console.error('Failed to complete pending trip save:', err);
-        return
-      }
-    };
-
-    completePendingSave();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const { activityOptions, tripData, updateTripData } = useTripStore();
 
   const handleSaveTrip = async () => {
     const {
       data: { session },
     } = await supabase.auth.getSession();
 
-    const pinnedActivities = activityOptions.filter((a) => a.pinned);
-
     if (!session) {
-      localStorage.setItem('loginRedirectPath', '/chat/itinerary');
-      localStorage.setItem(
-        PENDING_SAVE_KEY,
-        JSON.stringify({ tripData, activities: pinnedActivities })
-      );
-
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-
-      if (error) {
-        localStorage.removeItem(PENDING_SAVE_KEY);
-        localStorage.removeItem('loginRedirectPath');
-        alert('You must be logged in to save trip');
-      }
+      console.error('No session available — anonymous sign-in should have happened on app load.');
+      alert('Could not save trip: no session. Please reload the page and try again.');
       return;
     }
+
+    const pinnedActivities = activityOptions.filter((a) => a.pinned);
 
     try {
       await saveTrip(session.user.id, tripData, pinnedActivities);

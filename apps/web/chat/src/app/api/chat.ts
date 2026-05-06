@@ -11,18 +11,6 @@ import {
   type ResponseData,
 } from '@allorai/shared-types';
 
-// TODO Fix the type here
-export interface CreateSessionResponse {
-  sessionId: string;
-  createdAt: string;
-}
-
-// API sets cookie for chat_session_id
-export async function createChatSession(): Promise<CreateSessionResponse> {
-  const response = await apiClient.post<CreateSessionResponse>('/chat/session', {});
-  return response.data;
-}
-
 export async function sendChatMessage(data: ChatRequest): Promise<ChatResponse> {
   try {
     if (process.env.NX_PUBLIC_USE_SAMPLE_DATA === 'all') {
@@ -82,12 +70,6 @@ export async function sendChatMessage(data: ChatRequest): Promise<ChatResponse> 
     }
     throw error; // If not returning sample data, re-throw
   }
-}
-
-// API deletes cookie and chat_session_id from the browser, not Supabase.
-export async function deleteChatSession(): Promise<number> {
-  const response = await apiClient.delete<number>('/chat/session', {});
-  return response.status;
 }
 
 const responseDataForStep = ({ messages }: ChatRequest): ResponseData => {

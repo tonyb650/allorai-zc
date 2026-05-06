@@ -2,7 +2,6 @@ import { Route, Navigate, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import '../styles.css';
 import React, { Suspense } from 'react';
-import LoginPage from './features/login/LoginPage';
 import AuthCallback from './features/login/AuthCallback';
 
 const ExplorePage = React.lazy(() => import('explore/Module'));
@@ -14,7 +13,6 @@ const ItinerariesPage = React.lazy(() => import('itineraries/Module'));
 // chat = 4202
 // itineraries = 4203
 //// explore = 4204
-// login = keep it in the platform
 
 function App() {
   return (
@@ -26,7 +24,6 @@ function App() {
           <Route path="chat/*" element={<ChatPage />} />
           <Route path="itineraries" element={<ItinerariesPage />} />
           <Route path="explore" element={<ExplorePage />} />
-          <Route path="login" element={<LoginPage />} />
           <Route path="auth/callback" element={<AuthCallback />} />
         </Route>
       </Routes>

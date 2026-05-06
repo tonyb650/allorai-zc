@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import Logo from './Logo';
 import { Button, Dialogue } from '@allorai/shared-ui';
 import { StartOver } from './modals/StartOver';
-import { deleteChatSession } from '../api/chat';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
 
@@ -16,14 +15,20 @@ export default function Navbar() {
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const { user } = useAuth();
 
-  const handleGoogleLogin = async () => {
+  const isAnonymous = user?.is_anonymous === true;
+
+  const handleLinkGoogle = async () => {
     localStorage.setItem('loginRedirectPath', window.location.pathname + window.location.search);
-    await supabase.auth.signInWithOAuth({
+    const { error } = await supabase.auth.linkIdentity({
       provider: 'google',
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
+    if (error) {
+      console.error('Failed to start Google link flow:', error.message);
+      localStorage.removeItem('loginRedirectPath');
+    }
   };
 
   return (
@@ -46,34 +51,14 @@ export default function Navbar() {
             >
               <StartOver
                 onClose={() => setIsDialogOpen(false)}
-                onReset={async () => {
-                  try {
-                    await deleteChatSession();
-                  } catch {
-                    console.error('No active session to clear - continuing with reset');
-                  } finally {
-                    setIsDialogOpen(false);
-                    navigate('/');
-                  }
+                onReset={() => {
+                  setIsDialogOpen(false);
+                  navigate('/');
                 }}
               />
             </Dialogue>
             {navigation.map((item) => {
               const isActive = location.pathname === item.href;
-              const isDisabled = item.href === '/itineraries' && !user;
-
-              if (isDisabled) {
-                return (
-                  <span
-                    key={item.name}
-                    className="flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
-                    title="Log in to view your trips"
-                  >
-                    <span>{item.name}</span>
-                  </span>
-                );
-              }
-
               return (
                 <Link
                   key={item.name}
@@ -89,7 +74,11 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            {user ? (
+            {isAnonymous ? (
+              <Button variant="secondary" onClick={handleLinkGoogle}>
+                Sign in with Google
+              </Button>
+            ) : user ? (
               <Button
                 variant="secondary"
                 onClick={async () => {
@@ -99,26 +88,7 @@ export default function Navbar() {
               >
                 Log Out
               </Button>
-            ) : (
-              <>
-                <Button variant="secondary" onClick={handleGoogleLogin}>
-                  Log In
-                </Button>
-
-                {/* <Link
-                to="/login"
-                className={clsx(
-                  'flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                  location.pathname === '/login'
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-[#002e9a] hover:bg-gray-100 hover:text-gray-900',
-                )}
-              >
-                <span>Log In</span>
-              </Link>
-              */}
-              </>
-            )}
+            ) : null}
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { Button, Dialogue, StartOver } from '@allorai/shared-ui';
-import { deleteChatSession } from '../api/chat';
 import clsx from 'clsx';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
@@ -137,17 +136,10 @@ const ChatPage = () => {
               >
                 <StartOver
                   onClose={() => setIsDialogOpen(false)}
-                  onReset={async () => {
-                    try {
-                      await deleteChatSession();
-                    } catch {
-                      // No active session to clear — continue with reset
-                      console.error('No active session to clear - continue with reset');
-                    } finally {
-                      reset();
-                      setIsDialogOpen(false);
-                      navigate('/landing');
-                    }
+                  onReset={() => {
+                    reset();
+                    setIsDialogOpen(false);
+                    navigate('/landing');
                   }}
                 />
               </Dialogue>
