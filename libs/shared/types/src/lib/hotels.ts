@@ -22,6 +22,8 @@ export const SAMPLE_HOTELS: Hotel[] = [
     description:
       'A polished waterfront hotel with walkable access to Las Olas Boulevard dining, rooftop pool service, and marina views.',
     website: 'https://www.lasolasharborhotel.com',
+    latitude: 26.1195,
+    longitude: -80.1373,
     num_of_stars: 5,
     price: 312,
   },
@@ -32,6 +34,8 @@ export const SAMPLE_HOTELS: Hotel[] = [
     description:
       'A relaxed beachside inn two blocks from the sand with complimentary breakfast and bike rentals.',
     website: 'https://www.oceansuninn.com',
+    latitude: 26.1224,
+    longitude: -80.1029,
     num_of_stars: 3,
     price: 176,
   },
@@ -42,6 +46,8 @@ export const SAMPLE_HOTELS: Hotel[] = [
     description:
       'Modern all-suite property with spacious rooms, kitchenettes, and quick rides to both beach and nightlife.',
     website: 'https://www.canalviewsuites.com',
+    latitude: 26.1279,
+    longitude: -80.1248,
     num_of_stars: 4,
     price: 224,
   },
@@ -52,6 +58,8 @@ export const SAMPLE_HOTELS: Hotel[] = [
     description:
       'A value-focused boutique lodge with clean rooms, free parking, and easy access to I-95 and FLL airport.',
     website: 'https://www.cypresskeylodge.com',
+    latitude: 26.1401,
+    longitude: -80.1532,
     num_of_stars: 2,
     price: 124,
   },

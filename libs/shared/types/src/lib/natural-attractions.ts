@@ -19,11 +19,11 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
     category: 'Nature',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/national_park3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/national_park1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/national_park2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/national_park3.jpg',
     ],
   },
   {
@@ -38,11 +38,11 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
     category: 'Nature',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/mountains3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/mountains1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/mountains2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/mountains3.jpg',
     ],
   },
   {
@@ -57,11 +57,11 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
     category: 'Nature',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/lake3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/lake1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/lake2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/lake3.jpg',
     ],
   },
   {
@@ -76,11 +76,11 @@ export const SAMPLE_NATURAL_ATTRACTIONS: NaturalAttraction[] = [
     category: 'Nature',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/nature/beach3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/beach1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/beach2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/nature/beach3.jpg',
     ],
   },
 ];

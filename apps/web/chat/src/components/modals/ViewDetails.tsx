@@ -1,4 +1,5 @@
 import { Activity } from '@allorai/shared-types';
+import { ImageWithFallback } from '@allorai/shared-ui';
 
 type ViewDetailsProps = {
   activity: Activity;
@@ -19,26 +20,15 @@ export const ViewDetails = ({ activity }: ViewDetailsProps) => {
       </p>
 
       {/* Photos */}
-      {activity.imageUrl && (
-        <div className="flex gap-6">
-          {/* {activity.imageUrls?.map((image, i) => (
-            <div key={i} className="h-[147px] w-[218px] overflow-hidden rounded-xl">
-              <img
-                src={image}
-                alt={`${activity.name} ${i + 1}`}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))} */}
-          <div className="h-[147px] w-[218px] overflow-hidden rounded-xl">
-            <img
-              src={activity.imageUrl}
-              alt={`${activity.name}`}
-              className="h-full w-full object-cover"
-            />
-          </div>
+      <div className="flex gap-6">
+        <div className="h-[147px] w-[218px] overflow-hidden rounded-xl">
+          <ImageWithFallback
+            src={activity.imageUrl}
+            alt={activity.name}
+            className="h-full w-full object-cover"
+          />
         </div>
-      )}
+      </div>
 
       {/* Contact info */}
       <div className="flex flex-wrap gap-11 text-black">

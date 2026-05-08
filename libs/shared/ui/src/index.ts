@@ -4,3 +4,4 @@ export * from './lib/ActivityCard';
 export * from './lib/BudgetOverview';
 export * from './lib/Dialogue';
 export * from './lib/StartOver';
+export * from './lib/ImageWithFallback';

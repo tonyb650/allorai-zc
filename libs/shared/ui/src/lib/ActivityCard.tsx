@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { Pin } from 'lucide-react';
 import { Button } from './Button';
+import { ImageWithFallback } from './ImageWithFallback';
 
 type ActivityCardProps = {
   name: string;
@@ -85,7 +86,7 @@ export const ActivityCard = ({
             <Pin size={24} fill={pinned ? 'currentColor' : 'none'} />
           </button>
           <div className="flex-1 w-[158px] min-h-[1px] max-h-[139px] overflow-hidden rounded-sm bg-[#333]">
-            {imageUrl && <img src={imageUrl} alt={title} className="h-full w-full object-cover" />}
+            <ImageWithFallback src={imageUrl} alt={title} className="h-full w-full object-cover" />
           </div>
           {tag && (
             <span className="mt-auto inline-flex items-center rounded-full bg-[#75cfcc] px-2.5 py-1.5 text-xs font-semibold text-black">

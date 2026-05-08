@@ -1,4 +1,5 @@
 import { Hotel } from '@allorai/shared-types';
+import { ImageWithFallback } from '@allorai/shared-ui';
 import { calculateNights } from '../../utils/formatData';
 
 type HotelChipProps = {
@@ -19,11 +20,13 @@ const HotelChip = ({ hotel, departureDate, returnDate }: HotelChipProps) => {
   return (
     <div className="bg-[rgba(251,251,254,0.75)] border border-black flex gap-[30px] items-stretch p-6 rounded-2xl justify-between">
       {/* Hotel Image */}
-      {hotel.imageUrl && (
-        <div className="self-stretch w-[80px] shrink-0 overflow-hidden rounded-lg">
-          <img src={hotel.imageUrl} alt={hotel.name} className="h-full w-full object-cover" />
-        </div>
-      )}
+      <div className="self-stretch w-[80px] shrink-0 overflow-hidden rounded-lg">
+        <ImageWithFallback
+          src={hotel.imageUrl}
+          alt={hotel.name}
+          className="h-full w-full object-cover"
+        />
+      </div>
 
       {/* Hotel Price */}
       {hotel.price != null && (

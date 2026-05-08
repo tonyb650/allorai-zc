@@ -31,11 +31,11 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/concert1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/concert1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/concert1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/concert2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/concert3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/concert1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/concert2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/concert3.jpg',
     ],
   },
   {
@@ -50,11 +50,11 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/museum1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/museum1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/museum1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/museum2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/museum3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/museum1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/museum2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/museum3.jpg',
     ],
   },
   {
@@ -69,11 +69,11 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/amusement_park3.jpg',
     ],
   },
   {
@@ -88,11 +88,11 @@ export const SAMPLE_ACTIVITIES: Activity[] = [
     website: 'https://www.allorai.app',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/bowling1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/bowling1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/bowling1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/bowling2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/activities/bowling3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/bowling1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/bowling2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/activities/bowling3.jpg',
     ],
   },
 ];

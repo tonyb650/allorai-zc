@@ -19,11 +19,11 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/dog_statue3.jpg',
     ],
   },
   {
@@ -38,11 +38,11 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/lights3.jpg',
     ],
   },
   {
@@ -57,11 +57,11 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/mural3.jpg',
     ],
   },
   {
@@ -76,11 +76,11 @@ export const SAMPLE_SELIFE_SPOTS: SelfieSpot[] = [
     category: 'Selfie Spots',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/selfie-spots/observatory3.jpg',
     ],
   },
 ];

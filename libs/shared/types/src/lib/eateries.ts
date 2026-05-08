@@ -19,11 +19,11 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
     category: 'Food',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/bbq3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/bbq1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/bbq2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/bbq3.jpg',
     ],
   },
   {
@@ -38,11 +38,11 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
     category: 'Food',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/burger3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/burger1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/burger2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/burger3.jpg',
     ],
   },
   {
@@ -57,11 +57,11 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
     category: 'Food',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/ramen3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/ramen1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/ramen2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/ramen3.jpg',
     ],
   },
   {
@@ -76,11 +76,11 @@ export const SAMPLE_RESTAURANTS: Eatery[] = [
     category: 'Food',
     pinned: false,
     imageUrl:
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
     imageUrls: [
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki2.jpg',
-      'https://qgqmmzslzlhhledqpmzw.supabase.co/storage/v1/object/public/activity-images/food/taiyaki3.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/taiyaki1.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/taiyaki2.jpg',
+      'https://eshjuwnwxifcdayvivbg.supabase.co/storage/v1/object/public/activity-images/food/taiyaki3.jpg',
     ],
   },
 ];
